@@ -7,6 +7,7 @@
 #
 # License: BSD Style.
 
+from __future__ import print_function
 import numpy as np
 import sys
 from time import time
