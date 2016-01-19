@@ -7,6 +7,7 @@ This is a python implementation of Factorization Machines [1]. This uses stochas
 
 ## Installation
 ```
+python setup.py build_clib # python3
 python setup.py build_ext --inplace
 ```
 

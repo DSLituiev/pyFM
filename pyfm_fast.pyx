@@ -408,7 +408,7 @@ cdef class FM_fast(object):
         for epoch in range(self.n_iter):
     
             if self.verbose > 0:
-                print("-- Epoch %d" % (epoch + 1))
+                print("-- Epoch %d" % (epoch + 1), file = sys.stderr )
             self.count = 0
             self.sumloss = 0
             if self.shuffle_training:
@@ -428,7 +428,7 @@ cdef class FM_fast(object):
                                           validation_xnnz, validation_y)
             if self.verbose > 0:
                 error_type = "MSE" if self.task == REGRESSION else "log loss"
-                print "Training %s: %.5f" % (error_type, (self.sumloss / self.count))
+                print( "Training %s: %.5f" % (error_type, (self.sumloss / self.count)) , file = sys.stderr )
 
 cdef inline double max(double a, double b):
     return a if a >= b else b

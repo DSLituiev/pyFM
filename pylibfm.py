@@ -1,3 +1,4 @@
+from __future__ import print_function
 import numpy as np
 from sklearn import cross_validation
 import random
@@ -172,7 +173,7 @@ class FM:
 
         # use sklearn to create a validation dataset for lambda updates
         if self.verbose == True:
-            print "Creating validation dataset of %.2f of training for adaptive regularization" % self.validation_size
+            print( "Creating validation dataset of %.2f of training for adaptive regularization" % self.validation_size )
         X_train, validation, train_labels, validation_labels = cross_validation.train_test_split(
             X, y, test_size=self.validation_size)
         self.num_attribute = X_train.shape[1]
@@ -212,7 +213,7 @@ class FM:
         # report epoch information
         if self.verbose == True:
             print("-- Epoch %d" % (epoch + 1))
-            print "Train MSE: %.5f" % (self.sumloss / self.count)
+            print( "Train MSE: %.5f" % (self.sumloss / self.count) )
 
     def predict(self, X):
         """Predict using the factorization machine
